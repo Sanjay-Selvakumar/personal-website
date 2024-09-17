@@ -42,8 +42,10 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/emoji-avatar.png" alt="Shri Sanjay Kumar Selvakumar" id="slideshow" class="avatar-image" width="80">
-          <img src="./assets/images/headshot.jpg" alt="Shri Sanjay Kumar Selvakumar" class="avatar-image hidden" width="80">
+          <div id="slideshow-container">
+            <img src="./assets/images/emoji-avatar.png" alt="Shri Sanjay Kumar Selvakumar" id="slideshow" class="avatar-image" width="80">
+            <img src="./assets/images/headshot.jpg" alt="Shri Sanjay Kumar Selvakumar" class="avatar-image hidden" width="80">
+          </div>
         </figure>
 
         <div class="info-content">
@@ -162,9 +164,9 @@
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -541,7 +543,7 @@
         - #PROJECTS
       -->
 
-      <article class="projects" data-page="projects">
+      <!-- <article class="projects" data-page="projects">
 
         <header>
           <h2 class="h2 article-title">Projects</h2>
@@ -551,29 +553,41 @@
           
           <ul class="project-list">
 
-            <!-- <li class="project-item  active">
-              <a href="#">
+            <li class="project-item">
+              <a href="#" data-project-id="loki-project">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                  <img src="./assets/images/loki-project.png" alt="Loki Project" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
+                <h3 class="project-title">Loki Mobile Application</h3>
 
               </a>
-            </li> -->
+            </li>
 
           </ul>
 
+          <div id="project-modal" class="modal hidden">
+            <div class="modal-content">
+              <span class="close-btn" onclick="document.getElementById('modal').style.display='none'"><ion-icon name="close-circle-outline"></ion-icon></span>
+              <h2 id="modal-title"></h2>
+              <img id="modal-image" src="" alt="Project Image">
+              <p id="modal-description"></p>
+              <h3>Technologies Used</h3>
+              <p id="modal-technologies"></p>
+              <h3>Key Contributions</h3>
+              <p id="modal-lessons"></p>
+            </div>
+          </div>
+          
+
         </section>
 
-      </article>
+      </article> -->
 
     </div>
 
