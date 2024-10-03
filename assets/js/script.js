@@ -44,7 +44,6 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
@@ -55,7 +54,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
-
   });
 }
 
@@ -111,20 +109,37 @@ const projects = [
     ]
   },
   {
+    id: 'cloud-computing-project-2',
+    title: "Serverless Video Processing",
+    image: "./assets/images/cloud-computing-project-2.jpg",
+    description: [
+      "This cloud-based application automates the process of splitting videos into frames and performing face recognition using a serverless AWS architecture.",
+      "The system starts when a video is uploaded to an S3 input bucket which invokes the video splitting Lambda function",
+      "The output frames are stored in another S3 bucket which invokes the face recognition Lambda function that identifies individuals with the pre-trained machine learning model.",
+    ],
+    technologies: ["Python", "Boto3", "AWS S3", "AWS Lambda", "Amazon Cloudwatch", "AWS IAM", "AWS ECR", "Docker"],
+    lessons: [
+      { heading: "Serverless Event-Driven Architecture", description: "Learned how to build a serverless, event-driven pipeline using AWS Lambda and S3 bucket triggers to automate video processing and facial recognition." },
+      { heading: "Dockerized Lambda Functions", description: "Containerized video splitting and face recognition services using Docker to ensure smooth scalability and streamlined deployment of the Lambda functions." },
+      { heading: "Efficient Data Storage and Retrieval", description: "Utilized multiple S3 buckets to store input videos, intermediate frames, and output face recognition results, ensuring the smooth flow of data between each processing step." },
+      { heading: "Resource Optimization", description: "Implemented autoscaling for Lambda functions, allowing the system to handle variable loads by dynamically scaling based on the number of files uploaded to the S3 buckets." },
+    ]
+  },
+  {
     id: 'cloud-computing-project-1',
     title: "Cloud-Driven Face Recognition",
     image: "./assets/images/cloud-computing-project-1.jpg", 
     description: [
       "This cloud-based application is a multi-tier face recognition service built with AWS infrastrucutre that dynamically scales to meet user demand.",
       "Key features include asynchronous processing, automatic scaling of server instances, and integration with AWS services to optimize performance and minimize costs.",
-      "The Web Tier of the system is responsible for handling incoming HTTP requests and sending back results, and the App Tier, run on AWS EC2 Instances, performs facial recognition using the machine learning model.", 
+      "The Web Tier of the system is responsible for handling incoming HTTP requests and sending back results, and the App Tier, run on AWS EC2 Instances, performs facial recognition using the pre-trained machine learning model.", 
       "These tiers communicate asynchronously via AWS SQS, while images are stored and retrieved from AWS S3 for processing, ensuring smooth and efficient data transfer between the tiers.",
     ],
-    technologies: ["AWS EC2", "AWS S3", "AWS SQS", "AWS IAM", "Python", "Boto3"],
+    technologies: ["Python", "Boto3", "AWS S3", "AWS EC2", "AWS SQS", "AWS IAM"],
     lessons: [
       { heading: "AWS Infrastructure Management", description: "Gained hands-on experience with various AWS services including IAM, EC2, S3, and SQS for building cloud-native applications." },
       { heading: "Scalable Architecture", description: "Implemented custom autoscaling logic to dynamically launch and terminate App Tier instances based on workload, conserving resources during low demand periods and handling concurrent requests during high traffic periods." },
-      { heading: "Machine Learning Integration", description: "Integrated a pre-trained deep learning model for facial recognition, optimizing its performance in cloud-based environments." }
+      { heading: "Machine Learning Integration", description: "Integrated the pre-trained deep learning model for facial recognition, optimizing its performance in cloud-based environments." }
     ],
   }
 ];
@@ -176,6 +191,7 @@ function openModal(project) {
   modal.classList.remove('hidden');
   modal.style.display = 'flex';
 }
+
 function closeModal() {
   const modal = document.getElementById('project-modal');
   modal.classList.add('hidden');
