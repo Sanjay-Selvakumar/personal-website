@@ -361,6 +361,9 @@ function openModal(project) {
   const modal = document.getElementById('project-modal');
   modal.classList.remove('hidden');
   modal.style.display = 'flex';
+
+  const modalContent = modal.querySelector('.modal-content');
+  modalContent.scrollTop = 0;
 }
 
 function closeModal() {
